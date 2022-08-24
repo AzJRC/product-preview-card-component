@@ -1,0 +1,208 @@
+/*generic styles changes*/
+
+:root {
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 100%;
+
+    --primarycolor1: hsl(158, 36%, 37%);
+    --primarycolor2: hsl(30, 38%, 92%);
+
+    --neutralcolor1: hsl(212, 21%, 14%);
+    --neutralcolor2: hsl(228, 12%, 48%);
+    --neutralcolor3: white;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    font-size: inherit;
+}
+
+main {
+    height: 100vh;
+}
+
+/*
+- Family: [Montserrat]
+- Weights: 500, 700
+
+- Family: [Fraunces]
+- Weights: 700
+
+font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+/*Card style*/
+
+.flex-container {
+    display: flex;
+}
+
+.products-layout {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primarycolor2 );
+}
+
+div.product-card {
+    flex-direction: row;
+    min-width: 500px;
+    max-width: 500px;
+    border-radius: 0.8rem;
+    background-color: var(--neutralcolor3);
+}
+
+figure.img-container {
+    width: 50%;
+    margin: 0;
+    border-radius: 0.8rem 0 0 0.8rem;
+    background-image: url(./images/image-product-desktop.jpg);
+    background-color: #cccccc; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    
+}
+
+div.product-info {
+    flex-direction: column;
+    width: 50%;
+    margin: 10px;
+}
+
+div.product-info p.product-type {
+    font-size:  0.8rem;
+    color: var(--neutralcolor2);
+    text-align: left;
+    padding-left: 0.5rem;
+    letter-spacing: 0.3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0.25rem 0;
+}
+
+div.product-info h1.product-name {
+    font-size:  1.8em;
+    color: var(--neutralcolor1);
+    text-align: left;
+    padding: 0 0.5rem;
+    font-family: 'Fraunces', sans-serif;
+    margin: 0.25rem 0;
+}
+
+div.product-info p.product-desc {
+    font-size:  1rem;
+    color: var(--neutralcolor2);
+    text-align: left;
+    padding: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    word-spacing: 2px;;
+    margin: 0.75rem 0;
+}
+
+div.product-info h2.product-price {
+    width: 100%;
+    margin-top: 0.25rem;
+    justify-content: center;
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 700;
+}
+
+div.product-info h2.product-price > span.product-actual-price {
+    font-size: 1.8rem;
+    width: 60%;
+    color: var(--primarycolor1);
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+div.product-info h2.product-price > span.product-old-price {
+    font-size: 1rem;
+    width: 40%;
+    color: var(--neutralcolor2);
+    text-decoration: line-through;
+}
+
+.btn {
+    background: var(--primarycolor1);
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    color: var(--primarycolor2);
+    border: none;
+}
+
+.btn .icon-cart::after{
+    content: "Add to cart";
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: hsl(158, 36%, 17%);
+    color: var(--neutralcolor3);
+}
+
+
+/*MEDIA QUERYS*/
+/*MEDIA QUERYS*/
+/*MEDIA QUERYS*/
+
+
+@media screen and (max-width:400px) {
+
+    div.product-card {
+        flex-direction: column;
+        min-width: 275px;
+        max-width: 275px;
+        height: 500px;
+    }
+    
+    figure.img-container {
+        width: 100%;
+        height: 40%;
+        border-radius: 0.8rem 0.8rem 0 0;
+        background-image: url(./images/image-product-mobile.jpg);      
+    }
+    
+    div.product-info {
+        flex-direction: column;
+        height: 60%;;
+        width: 100%;
+        margin: auto;
+        padding: 2.5px
+    }
+    
+    div.product-info p.product-type {
+        font-size:  0.6rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    div.product-info p.product-desc {
+        font-size:  0.9rem;
+        word-spacing: 1px;;
+    }
+    
+    div.product-info h2.product-price > span.product-actual-price {
+        width: 45%;
+        text-align: left;
+        letter-spacing: 0.1rem;
+    }
+    
+    div.product-info h2.product-price > span.product-old-price {
+        width: 55%;
+        text-align: left;
+    }
+    
+    .btn {
+        width: 70%;
+    }
+
+}
+
+
